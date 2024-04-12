@@ -54,6 +54,17 @@ dotnet ef migrations add init
 dotnet ef database update
 ```
 
+Initial data on Stock table
+```
+INSERT INTO finshark.public."Stocks"("Symbol", "CompanyName", "Purchase", "LastDiv", "Industry", "MarketCap")
+VALUES ('TSLA', 'Tesla', 100.00, 2.00, 'Automotive', 547100000000)
+, ('MSFT', 'Microsoft', 100.00, 1.20, 'Technology', 3179710000000)
+, ('SEB', 'Skandinaviska Enskilda banken', 56.00, 2.10, 'Finance', 316960000000)
+, ('Swe', 'Swedbank', 44.00, 1.10, 'Finance', 248020000000)
+, ('PLTR', 'Plantir', 23.00, 0, 'Technology', 123456)
+```
+
 ## 4 - Controllers
 
-
+GET /api/stocks/
+GET /api/stocks/{id}
