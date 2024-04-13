@@ -111,3 +111,6 @@ Installing additional packages:
 ## 14 - 1-To-Many Create (Post)
 
 ## 15 - Comment UPDATE (Post)
+
+## 16 - Comment DELETE
+
