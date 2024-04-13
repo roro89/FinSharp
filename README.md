@@ -119,3 +119,5 @@ Installing additional packages:
 ## 18 - Filtering
 .AsQueryable() - deffers SQL rendering and allows to do the filtering
 .ToList() - Renders SQL
+
+## 19 - Sorting
