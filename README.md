@@ -115,3 +115,7 @@ Installing additional packages:
 ## 16 - Comment DELETE
 
 ## 17 - Data Validation
+
+## 18 - Filtering
+.AsQueryable() - deffers SQL rendering and allows to do the filtering
+.ToList() - Renders SQL
