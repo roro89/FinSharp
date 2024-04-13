@@ -74,3 +74,5 @@ GET /api/stocks/{id}
 ## 6 - POST (Create)
 
 ## 7 - PUT (Update)
+
+## 8 - DELETE
