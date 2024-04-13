@@ -83,3 +83,7 @@ GET /api/stocks/{id}
  * Make database calls await and use async methods
 
 For some reasons, EF remove operation is not asynchronious.
+
+## 10 - Repository pattern + DI
+Replacing repetetives (abstraction): _context.Stock.FirstOrDefault() -> repo.FindStock()
+
