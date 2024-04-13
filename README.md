@@ -88,3 +88,19 @@ For some reasons, EF remove operation is not asynchronious.
 Replacing repetetives (abstraction): _context.Stock.FirstOrDefault() -> repo.FindStock()
 
 ## 11 - Refactor to Repository
+
+## 12 - Comment System
+Initial comment seeding
+```
+INSERT INTO public."Comments"("Title", "Content", "CreatedOn", "StockId")
+VALUES ('Test comment', 'This is my test comment content', '2024-04-13 22:11:55', 2)
+	 , ('Another test comment', 'This is my another test comment content', '2024-04-13 22:14:00', 2)
+	 , ('Another test comment', 'This is my another test comment content', '2024-04-13 22:14:00', 2)
+	 , ('Test 2', 'Test comment content', '2024-04-10 14:33:21', 1)
+	 , ('Test 3', 'Test 3 comment content', '2024-04-11 11:00:23', 1)
+	 , ('Test 4', 'Test 4 comment content', '2024-04-01 10:03:55', 3)
+	 , ('Test 5', 'Test 5 comment content', '2024-04-11 11:44:22', 3)
+	 , ('Test 6', 'Test 6 comment content', '2024-04-11 12:05:45', 3);	 
+```
+
+## 13 - Comment GET + Include()
