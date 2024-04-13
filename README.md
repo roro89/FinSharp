@@ -68,3 +68,9 @@ VALUES ('TSLA', 'Tesla', 100.00, 2.00, 'Automotive', 547100000000)
 
 GET /api/stocks/
 GET /api/stocks/{id}
+
+## 5 - DTOs
+
+## 6 - POST (Create)
+
+## 7 - PUT (Update)
