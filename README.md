@@ -87,3 +87,4 @@ For some reasons, EF remove operation is not asynchronious.
 ## 10 - Repository pattern + DI
 Replacing repetetives (abstraction): _context.Stock.FirstOrDefault() -> repo.FindStock()
 
+## 11 - Refactor to Repository
