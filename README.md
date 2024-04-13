@@ -76,3 +76,10 @@ GET /api/stocks/{id}
 ## 7 - PUT (Update)
 
 ## 8 - DELETE
+
+## 9 - Asyn/Await
+ * Define methods as async
+ * Wrap return type by Task<>
+ * Make database calls await and use async methods
+
+For some reasons, EF remove operation is not asynchronious.
