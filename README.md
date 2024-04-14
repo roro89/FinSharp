@@ -212,3 +212,11 @@ dotnet ef migrations add SeedRole
 ```
 dotnet ef database update
 ```
+
+## 23 - Token service
+Claims vs Roles
+* Roles are more generic and broad (old school)
+* Claims don't require DB and verify fexible (new school)
+
+**MS has moved away from Roles**
+
