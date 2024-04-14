@@ -284,3 +284,5 @@ When applying changes to database:
 ## 26 - Portfolio GET
 
 ## 27 - Porfolio CREATE
+
+## 28 - Portfolio DELETE
