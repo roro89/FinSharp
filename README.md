@@ -280,3 +280,5 @@ When applying changes to database:
   ```
     dotnet ef database update
   ```
+
+## 26 - Portfolio GET
