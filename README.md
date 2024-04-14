@@ -202,3 +202,13 @@ dotnet ef migrations add Identity
 ```
 dotnet ef database update
 ```
+
+## 22 - Register (User management)
+Adding EF migration to add users and roles
+```
+dotnet ef migrations add SeedRole
+```
+
+```
+dotnet ef database update
+```
