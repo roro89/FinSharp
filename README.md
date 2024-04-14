@@ -286,3 +286,11 @@ When applying changes to database:
 ## 27 - Porfolio CREATE
 
 ## 28 - Portfolio DELETE
+
+## 29 - One-To-One
+Model in the model
+
+Adding EF migration
+```csharp
+dotnet ef migrations add CommentOneToOne
+```
