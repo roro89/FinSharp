@@ -55,7 +55,7 @@ dotnet ef database update
 ```
 
 Initial data on Stock table
-```
+```sql
 INSERT INTO finshark.public."Stocks"("Symbol", "CompanyName", "Purchase", "LastDiv", "Industry", "MarketCap")
 VALUES ('TSLA', 'Tesla', 100.00, 2.00, 'Automotive', 547100000000)
 , ('MSFT', 'Microsoft', 100.00, 1.20, 'Technology', 3179710000000)
@@ -91,7 +91,7 @@ Replacing repetetives (abstraction): _context.Stock.FirstOrDefault() -> repo.Fin
 
 ## 12 - Comment System
 Initial comment seeding
-```
+```sql
 INSERT INTO public."Comments"("Title", "Content", "CreatedOn", "StockId")
 VALUES ('Test comment', 'This is my test comment content', '2024-04-13 22:11:55', 2)
 	 , ('Another test comment', 'This is my another test comment content', '2024-04-13 22:14:00', 2)
@@ -121,3 +121,13 @@ Installing additional packages:
 .ToList() - Renders SQL
 
 ## 19 - Sorting
+
+## 20 - Pagination
+Implementation using LINQ: 
+* .Skip()
+* .Take()
+
+```csharp
+    var skipNumber = (query.PageNumber - 1) * query.PageSize;
+    return await stocks.Skip(skipNumber).Take(query.PageSize).ToListAsync();
+```
