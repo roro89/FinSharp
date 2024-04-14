@@ -131,3 +131,74 @@ Implementation using LINQ:
     var skipNumber = (query.PageNumber - 1) * query.PageSize;
     return await stocks.Skip(skipNumber).Take(query.PageSize).ToListAsync();
 ```
+
+## 21 - ASP.NET Core Web API Identity JWT. Install Identity
+Installing libraries:
+* Microsoft.Extensions.Identity.Core
+* Microsoft.AspNetCore.Identity.EntityFrameworkCore
+* Microsoft.AspNetCore.Authentication.JwtBearer
+
+Creating user class:
+
+```csharp
+public class AppUser : IdentityUser
+{
+    
+}
+```
+
+Registering user in DBContext (replace DbContext with IdentityDbContext):
+```csharp
+public class ApplicationDatabaseContext : IdentityDbContext<AppUser>
+{
+
+}
+```
+
+Registering in Program.cs
+```csharp
+builder.Services.AddIdentity<AppUser, IdentityRole>(options=>
+    {
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequiredLength = 12;
+        options.Password.RequireNonAlphanumeric = true;
+    })
+    .AddEntityFrameworkStores<ApplicationDatabaseContext>();;
+```
+
+Adding authentication service and schemes
+```csharp
+builder.Services.AddAuthentication(options=>
+{
+    options.DefaultAuthenticateScheme = 
+    options.DefaultChallengeScheme = 
+    options.DefaultForbidScheme = 
+    options.DefaultScheme = 
+    options.DefaultSignInScheme = 
+    options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options => 
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = builder.Configuration["JWT:Issuer"],
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["JWT:Audience"],
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"])
+        ),
+    };
+});
+```
+
+Adding EF Migrations
+```
+dotnet ef migrations add Identity
+```
+
+```
+dotnet ef database update
+```
