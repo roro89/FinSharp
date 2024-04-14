@@ -294,3 +294,7 @@ Adding EF migration
 ```csharp
 dotnet ef migrations add CommentOneToOne
 ```
+
+## 30 - User generated Content
+.Include()
+.ThenInclude() - for nested includes
