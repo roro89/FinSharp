@@ -103,6 +103,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(x=>x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials()
+    //.WithOrigins("https://localhost:5555") FOR PRODUCTION
+    .SetIsOriginAllowed(origin=>true)
+    );
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
