@@ -255,3 +255,28 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 ```
+
+## 25 - Many-to-Many
+Many-to-Many configuration on EF:
+```csharp
+builder.Entity<Portfolio>()
+    .HasOne(u=>u.AppUser)
+    .WithMany(u=>u.Portfolios)
+    .HasForeignKey(p=>p.AppUserId);
+builder.Entity<Portfolio>()
+    .HasOne(u=>u.Stock)
+    .WithMany(u=>u.Portfolios)
+    .HasForeignKey(p=>p.StockId);
+```    
+
+When applying changes to database:
+* Need to delete the migrations
+* Need to drop the database
+* Add EF migration
+  ```
+    dotnet ef migrations add PortfolioManyToMany
+  ```
+* Apply changes to database
+  ```
+    dotnet ef database update
+  ```
