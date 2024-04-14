@@ -19,13 +19,16 @@ namespace api.Controllers
         private readonly ICommentRepository _commentsRepo;
         private readonly IStockRepository _stockRepo;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IFMPService _fmpService;
         public CommentsController(ICommentRepository commentsRepo,
                                  IStockRepository stockRepo,
-                                 UserManager<AppUser> userManager)
+                                 UserManager<AppUser> userManager,
+                                 IFMPService fmpService)
         {
             _stockRepo = stockRepo;
             _commentsRepo = commentsRepo;
             _userManager = userManager;
+            _fmpService = fmpService;
         }
 
         [HttpGet]
@@ -57,21 +60,32 @@ namespace api.Controllers
             return Ok(comment.ToCommentDto());
         }
 
-        [HttpPost("{stockId:int}")]
-        public async Task<IActionResult> Create([FromRoute] int stockId, [FromBody] CreateCommentRequestDto comment)
+        [HttpPost()]
+        [Route("{symbol:alpha}")]
+        public async Task<IActionResult> Create([FromRoute] string symbol, [FromBody] CreateCommentRequestDto comment)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (!await _stockRepo.StockExists(stockId))
+            var stock = await _stockRepo.GetBySymbolAsync(symbol);
+
+            if (stock == null)
             {
-                return BadRequest("Stock does not exist");
+                stock = await _fmpService.FindStockBySymbolAsync(symbol);
+                if (stock == null)
+                {
+                    return BadRequest("Stock does not exist");
+                }
+                else
+                {
+                    await _stockRepo.CreateAsync(stock);
+                }
             }
 
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
 
-            var commentModel = comment.ToCommentFromCreate(stockId);
+            var commentModel = comment.ToCommentFromCreate(stock.Id);
             commentModel.AppUserId = appUser.Id;
             await _commentsRepo.CreateAsync(commentModel);
 
