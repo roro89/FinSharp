@@ -220,3 +220,8 @@ Claims vs Roles
 
 **MS has moved away from Roles**
 
+## 24 - Login
+For login two things are used:
+1. User manager (to find the user)
+2. Signing manager (to validate password)
+
