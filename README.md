@@ -302,3 +302,12 @@ dotnet ef migrations add CommentOneToOne
 ## 31 - Data seeding
 
 ## 32 Finish API before React
+
+## React + .NET Core Finance Project
+```
+nmp install create-react-app
+```
+
+```
+npx create-react-app frontend --template typescript
+```
