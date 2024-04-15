@@ -314,3 +314,9 @@ npx create-react-app frontend --template typescript
 
 Snippets used (Extensions):
 [ES7 + React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+## JSX
+* Intrinsic elements (e.x. ```<div></div>```) -> React.createElement("div")
+* Value based elements (```<MyComponent></MyComponent>```) -> React.createElement(<MyComponent>)
+Running React app:
+```npm start```
