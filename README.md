@@ -320,3 +320,5 @@ Snippets used (Extensions):
 * Value based elements (```<MyComponent></MyComponent>```) -> React.createElement(<MyComponent>)
 Running React app:
 ```npm start```
+
+## Props
