@@ -322,3 +322,7 @@ Running React app:
 ```npm start```
 
 ## Props
+
+## Function component
+* function type -> React.FC<Props>
+* return type -> JSX.Element

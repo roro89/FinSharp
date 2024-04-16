@@ -7,7 +7,7 @@ interface Props {
     price: number;
 }
 
-const Card = ({companyName, ticker, price}: Props) => {
+const Card: React.FC<Props> = ({companyName, ticker, price}: Props) : JSX.Element=> {
   return (
     <div className='card'>
         <img src='https://static.vecteezy.com/system/resources/thumbnails/025/284/015/small_2x/close-up-growing-beautiful-forest-in-glass-ball-and-flying-butterflies-in-nature-outdoors-spring-season-concept-generative-ai-photo.jpg' alt='Image'/>
