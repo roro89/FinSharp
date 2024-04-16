@@ -330,3 +330,5 @@ Running React app:
 ## State
 Use state provides a getter and setter for you
 ```const[index, setIndex] = useState()```
+
+## Event handlers
