@@ -332,3 +332,24 @@ Use state provides a getter and setter for you
 ```const[index, setIndex] = useState()```
 
 ## Event handlers
+
+## Financial Modeling Prep API
+* Using external API: Financial Modeling API
+* ```npm install axios --save```
+* ```npm install --save-dev @types/axios```
+* ```npm install dotenv --save```
+
+Creating seperate API file
+Creating global type file
+
+## Data flow
+Lower level components are dumb components
+Higher level components are smart
+
+Good architecture:
+Event goes up - to smarter ones
+Data flows down to dumb components
+
+Search - Dump component
+
+**Restart was rewuired to fetch variables from .env**
