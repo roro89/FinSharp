@@ -326,3 +326,7 @@ Running React app:
 ## Function component
 * function type -> React.FC<Props>
 * return type -> JSX.Element
+
+## State
+Use state provides a getter and setter for you
+```const[index, setIndex] = useState()```
