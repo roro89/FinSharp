@@ -355,3 +355,6 @@ Search - Dump component
 **Restart was required to fetch variables from .env**
 
 ## Type Narrowing
+
+## Conditional Rendering
+
