@@ -352,4 +352,6 @@ Data flows down to dumb components
 
 Search - Dump component
 
-**Restart was rewuired to fetch variables from .env**
+**Restart was required to fetch variables from .env**
+
+## Type Narrowing
