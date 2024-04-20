@@ -358,3 +358,8 @@ Search - Dump component
 
 ## Conditional Rendering
 
+## Lists
+Iteration .map
+
+```npm install uuid```
+```npm install -save-dev @types/uuid```
