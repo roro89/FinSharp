@@ -5,9 +5,11 @@ import CardList from './Components/CardList/CardList';
 import Search from './Components/Search/Search';
 import { CompanySearch } from './company';
 import { searchCompanies } from './api';
+import ListPortfolio from './Components/Portfolio/ListPortfolio/ListPortfolio';
 
 function App() {
   const [search, setSearch] = useState<string>("");
+  const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -28,9 +30,10 @@ function App() {
     console.log(searchResult);
   }
 
-  const onPortfolioCreate = (e: SyntheticEvent) => {
+  const onPortfolioCreate = (e: any) => {
     e.preventDefault();
-    console.log("Added to portfolio");
+    const updatedPortfolio = [...portfolioValues, e.target[0].value];
+    setPortfolioValues(updatedPortfolio);
   }
   
   return (
@@ -38,6 +41,7 @@ function App() {
       <Search onSearchSubmit={onSearchSubmit} 
               search={search} 
               handleSearchChange={handleSearchChange}/>
+      <ListPortfolio portfolioValues={portfolioValues} />
       <CardList searchResults={searchResult} 
                 onPortfolioCreate={onPortfolioCreate} />
       {serverError && <h1>{serverError}</h1>}      

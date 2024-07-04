@@ -365,3 +365,11 @@ Iteration .map
 ```npm install -save-dev @types/uuid```
 
 ## Forms
+
+## Arrays
+Recreating arrays instead of modifying existing ones!!
+
+```ts
+    const updatedPortfolio = [...portfolioValues, e.target[0].value];
+    setPortfolioValues(updatedPortfolio);
+```
