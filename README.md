@@ -373,3 +373,15 @@ Recreating arrays instead of modifying existing ones!!
     const updatedPortfolio = [...portfolioValues, e.target[0].value];
     setPortfolioValues(updatedPortfolio);
 ```
+
+## Delete
+For deleting items from array we need to have a new instance of array as well. For that filter method can be used which returns a new instance of the array:
+```ts
+  const onPortfolioDelete = (e: any) => {
+    e.preventDefault();
+    const removed = portfolioValues.filter((value)=>{
+      return value !== e.target[0].value;
+    });
+    setPortfolioValues(removed);
+  }
+```
