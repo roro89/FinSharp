@@ -32,6 +32,9 @@ function App() {
 
   const onPortfolioCreate = (e: any) => {
     e.preventDefault();
+    const exists = portfolioValues.find((value) => value === e.target[0].value);
+    if (exists) return;
+    
     const updatedPortfolio = [...portfolioValues, e.target[0].value];
     setPortfolioValues(updatedPortfolio);
   }
