@@ -385,3 +385,15 @@ For deleting items from array we need to have a new instance of array as well. F
     setPortfolioValues(removed);
   }
 ```
+
+## Tailwind
+##### What is it?
+
+A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+
+
+##### How to install?
+```npm install -D tailwindcss```
+
+##### How to configure?
+```npx taiwindcss init```
