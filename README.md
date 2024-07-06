@@ -397,3 +397,10 @@ A utility-first CSS framework packed with classes like flex, pt-4, text-center a
 
 ##### How to configure?
 ```npx taiwindcss init```
+
+## React router
+```npm install --save react-router```
+```npm install --save react-router-dom```
+
+```npm install --save @types/react-router-dom```
+```npm install --save @types/react-router```
