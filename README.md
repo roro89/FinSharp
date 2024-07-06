@@ -404,3 +404,14 @@ A utility-first CSS framework packed with classes like flex, pt-4, text-center a
 
 ```npm install --save @types/react-router-dom```
 ```npm install --save @types/react-router```
+
+## useEffect
+Used for things outside of react app (e.x. external API)
+
+* ReferentialEquality Mode
+
+```ts
+useEffect(()=>{
+
+}, [object])
+```
