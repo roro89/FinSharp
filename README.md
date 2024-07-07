@@ -418,3 +418,5 @@ useEffect(()=>{
 
 ## Dashboard
 ```npm install react-icons```
+
+## Table
