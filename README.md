@@ -430,3 +430,6 @@ Ticker data passes through: Page->Dasboard->Profile/TTM
 ## Income statement
 
 ## Cash Flow statment
+
+## Loading Spinner
+```npm install react-spinners```
