@@ -438,3 +438,5 @@ Ticker data passes through: Page->Dasboard->Profile/TTM
 Skipped
 
 ## 10-K Finder
+
+## Finishing touches before API
