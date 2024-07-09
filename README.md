@@ -433,3 +433,8 @@ Ticker data passes through: Page->Dasboard->Profile/TTM
 
 ## Loading Spinner
 ```npm install react-spinners```
+
+## Comparable finder
+Skipped
+
+## 10-K Finder
