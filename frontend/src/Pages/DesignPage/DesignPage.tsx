@@ -17,10 +17,16 @@ const tableConfig = [
 const DesignPage = (props: Props) => {
   return (
     <>
-    <h1>FinShark design page</h1>
-    <h2>This is FinShark's design page. This is where we will house various design aspects of the app.</h2>
+    <h1>
+        Design guide- This is the design guide for Fin Shark. These are reuable
+        components of the app with brief instructions on how to use them.
+      </h1>
     <RatioList data={data} config={tableConfig}/>
-    <Table/>
+    <Table data={data} config={tableConfig}/>
+    <h3>
+        Table - Table takes in a configuration object and company data as
+        params. Use the config to style your table.
+      </h3>
     </>
   )
 }
