@@ -422,3 +422,7 @@ useEffect(()=>{
 ## Table
 
 ## Ratio list
+
+## Company profile/TTM
+TTM - Trailing 12-month revenue
+Ticker data passes through: Page->Dasboard->Profile/TTM
