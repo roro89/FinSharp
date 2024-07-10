@@ -302,3 +302,141 @@ dotnet ef migrations add CommentOneToOne
 ## 31 - Data seeding
 
 ## 32 Finish API before React
+
+## React + .NET Core Finance Project
+```
+nmp install create-react-app
+```
+
+```
+npx create-react-app frontend --template typescript
+```
+
+Snippets used (Extensions):
+[ES7 + React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+## JSX
+* Intrinsic elements (e.x. ```<div></div>```) -> React.createElement("div")
+* Value based elements (```<MyComponent></MyComponent>```) -> React.createElement(<MyComponent>)
+Running React app:
+```npm start```
+
+## Props
+
+## Function component
+* function type -> React.FC<Props>
+* return type -> JSX.Element
+
+## State
+Use state provides a getter and setter for you
+```const[index, setIndex] = useState()```
+
+## Event handlers
+
+## Financial Modeling Prep API
+* Using external API: Financial Modeling API
+* ```npm install axios --save```
+* ```npm install --save-dev @types/axios```
+* ```npm install dotenv --save```
+
+Creating seperate API file
+Creating global type file
+
+## Data flow
+Lower level components are dumb components
+Higher level components are smart
+
+Good architecture:
+Event goes up - to smarter ones
+Data flows down to dumb components
+
+Search - Dump component
+
+**Restart was required to fetch variables from .env**
+
+## Type Narrowing
+
+## Conditional Rendering
+
+## Lists
+Iteration .map
+
+```npm install uuid```
+```npm install -save-dev @types/uuid```
+
+## Forms
+
+## Arrays
+Recreating arrays instead of modifying existing ones!!
+
+```ts
+    const updatedPortfolio = [...portfolioValues, e.target[0].value];
+    setPortfolioValues(updatedPortfolio);
+```
+
+## Delete
+For deleting items from array we need to have a new instance of array as well. For that filter method can be used which returns a new instance of the array:
+```ts
+  const onPortfolioDelete = (e: any) => {
+    e.preventDefault();
+    const removed = portfolioValues.filter((value)=>{
+      return value !== e.target[0].value;
+    });
+    setPortfolioValues(removed);
+  }
+```
+
+## Tailwind
+##### What is it?
+
+A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+
+
+##### How to install?
+```npm install -D tailwindcss```
+
+##### How to configure?
+```npx taiwindcss init```
+
+## React router
+```npm install --save react-router```
+```npm install --save react-router-dom```
+
+```npm install --save @types/react-router-dom```
+```npm install --save @types/react-router```
+
+## useEffect
+Used for things outside of react app (e.x. external API)
+
+* ReferentialEquality Mode
+
+```ts
+useEffect(()=>{
+
+}, [object])
+```
+
+## Dashboard
+```npm install react-icons```
+
+## Table
+
+## Ratio list
+
+## Company profile/TTM
+TTM - Trailing 12-month revenue
+Ticker data passes through: Page->Dasboard->Profile/TTM
+
+## Income statement
+
+## Cash Flow statment
+
+## Loading Spinner
+```npm install react-spinners```
+
+## Comparable finder
+Skipped
+
+## 10-K Finder
+
+## Finishing touches before API
