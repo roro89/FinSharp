@@ -440,3 +440,9 @@ Skipped
 ## 10-K Finder
 
 ## Finishing touches before API
+
+## React Typescript Context Auth JWT - Services
+Keep code out of context using services
+Shareable state we put in Context
+
+```npm install react-toastify```
