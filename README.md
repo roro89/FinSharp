@@ -446,3 +446,7 @@ Keep code out of context using services
 Shareable state we put in Context
 
 ```npm install react-toastify```
+
+## React Typescript Context Auth JWT - Context
+Context - global, shareable. Purpose is to share state downstream to components
+Regular component (Custom hook). Self contained object. Not aimed to be shared

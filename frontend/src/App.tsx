@@ -3,12 +3,15 @@ import "react-toastify/dist/ReactToastify.css";
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { ToastContainer } from 'react-toastify';
+import { UserProvider } from './Context/useAuth';
 
 function App() {
   return <>
-  <Navbar/>
-  <Outlet/>
-  <ToastContainer/>
+  <UserProvider>
+    <Navbar/>
+    <Outlet/>
+    <ToastContainer/>
+  </UserProvider>
   </>;
 }
 
