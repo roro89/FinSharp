@@ -464,3 +464,6 @@ Regular component (Custom hook). Self contained object. Not aimed to be shared
 ```npm install react-hook-form yup @hookform/resolvers```
 
 ## React Typescript Context Auth JWT - Register
+
+## React Typescript Context Auth JWT - Protected Routes
+```<ProtectedRoute><StockProfile></ProtectedRoute>```
