@@ -1,4 +1,5 @@
 import React, { SyntheticEvent } from 'react'
+import { PortfolioGet } from '../../../Models/Portfolio';
 
 interface Props {
     onPortfolioDelete: (e:SyntheticEvent)=> void;
