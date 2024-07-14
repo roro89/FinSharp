@@ -3,6 +3,15 @@ ASP.NET Core Web API .NET 8
 
 Source project URL: [teddysmithdev/FinShark](https://github.com/teddysmithdev/FinShark.git)
 
+API URL: [http://localhost:5017/swagger/index.html](http://localhost:5017/swagger/index.html)
+
+Credentials for API:
+{
+  "username": "admin",
+  "email": "admin@admin.com",
+  "password": "4dm|N|5tr4t0r"
+}
+
 ## 0 - Preparation
 * Install Visual Studio Code
 * Install Visual Studio (For .NET Core 8 framework only)
@@ -440,3 +449,23 @@ Skipped
 ## 10-K Finder
 
 ## Finishing touches before API
+
+## React Typescript Context Auth JWT - Services
+Keep code out of context using services
+Shareable state we put in Context
+
+```npm install react-toastify```
+
+## React Typescript Context Auth JWT - Context
+Context - global, shareable. Purpose is to share state downstream to components
+Regular component (Custom hook). Self contained object. Not aimed to be shared
+
+## React Typescript Context Auth JWT - Login
+```npm install react-hook-form yup @hookform/resolvers```
+
+## React Typescript Context Auth JWT - Register
+
+## React Typescript Context Auth JWT - Protected Routes
+```<ProtectedRoute><StockProfile></ProtectedRoute>```
+
+## React Typescript Context Auth JWT - Logout
