@@ -467,3 +467,5 @@ Regular component (Custom hook). Self contained object. Not aimed to be shared
 
 ## React Typescript Context Auth JWT - Protected Routes
 ```<ProtectedRoute><StockProfile></ProtectedRoute>```
+
+## React Typescript Context Auth JWT - Logout
