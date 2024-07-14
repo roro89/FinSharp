@@ -469,3 +469,9 @@ Regular component (Custom hook). Self contained object. Not aimed to be shared
 ```<ProtectedRoute><StockProfile></ProtectedRoute>```
 
 ## React Typescript Context Auth JWT - Logout
+
+## React + ASP.NET Core. Comment box
+
+## React + ASP.NET Core. Comment List
+
+## React + ASP.NET Core. Portfolio Persisted
