@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
 # Copy the built application from the build environment
-COPY /api/out/ /usr/app
+COPY ./api/out/ /usr/app
 
 # Set the working directory inside the container
 WORKDIR /usr/app
