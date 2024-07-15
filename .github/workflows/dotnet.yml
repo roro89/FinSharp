@@ -30,5 +30,7 @@ jobs:
       with:
         image: wombir/finshark-api
         registry: docker.io
+        dockerfile: ./api/Dockerfile
+        directory: ./api
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
