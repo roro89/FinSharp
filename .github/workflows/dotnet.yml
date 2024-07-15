@@ -29,11 +29,23 @@ jobs:
     - name: Publish
       run: dotnet publish --no-build ./api/api.csproj -c Release -o ./api/out
 
-    - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v4
-      with:
-        image: wombir/finshark-api
-        registry: docker.io
-        dockerfile: ./api/Dockerfile
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+    # Publishing to Docker HUB
+    #- name: Build and Push Docker Image
+    #  uses: mr-smithers-excellent/docker-build-push@v4
+    #  with:
+    #    image: wombir/finshark-api
+    #    registry: docker.io
+    #    dockerfile: ./api/Dockerfile
+    #    username: ${{ secrets.DOCKER_USERNAME }}
+    #    password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Configure Docker CLI
+      run: |
+        echo ${{ secrets.GCP_SA_KEY }} | base64 -d > gcp-key.json
+        gcloud auth activate-service-account --key-file=gcp-key.json
+        gcloud auth configure-docker
+
+    - name: Tag and Push Docker Image to GCR
+      run: |
+        docker build -t europe-north1-docker.pkg.dev/finshark/finshark-api ./api
+        docker push europe-north1-docker.pkg.dev/finshark/finshark-api
