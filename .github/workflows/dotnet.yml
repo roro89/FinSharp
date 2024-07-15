@@ -39,13 +39,10 @@ jobs:
     #    username: ${{ secrets.DOCKER_USERNAME }}
     #    password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Configure Docker CLI
-      run: |
-        echo ${{ secrets.GCP_SA_KEY }} | base64 -d > gcp-key.json
-        gcloud auth activate-service-account --key-file=gcp-key.json
-        gcloud auth configure-docker
-
-    - name: Tag and Push Docker Image to GCR
-      run: |
-        docker build -t europe-north1-docker.pkg.dev/finshark/finshark-api ./api
-        docker push europe-north1-docker.pkg.dev/finshark/finshark-api
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v6
+      with:
+        image: finshark/finsharp-api
+        registry: gcr.io
+        username: _json_key
+        password: ${{ secrets.GCP_SA_KEY }}
