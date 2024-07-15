@@ -1,14 +1,24 @@
-# Use the official .NET Core SDK image as the build environment
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Stage 1: Build the application
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
 
-# Copy the built application from the build environment
-COPY ./api/out/ /usr/app
+# Copy csproj and restore as distinct layers
+COPY *.sln .
+COPY api/*.csproj ./api/
+RUN dotnet restore ./api/api.csproj
 
-# Set the working directory inside the container
-WORKDIR /usr/app
+# Copy everything else and build
+COPY api/. ./api/
+WORKDIR /app/api
+RUN dotnet publish -c Release -o out
 
-# Expose port 80 for the API
+# Stage 2: Create the runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/api/out ./
+
+# Expose port 80
 EXPOSE 80
 
-# Set the entry point for the application
+# Set the entry point
 ENTRYPOINT ["dotnet", "api.dll"]
