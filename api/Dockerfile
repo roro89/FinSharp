@@ -19,6 +19,7 @@ COPY --from=build /app/api/out ./
 
 # Expose port 80
 EXPOSE 80
+EXPOSE 443
 
 # Set the entry point
 ENTRYPOINT ["dotnet", "api.dll"]
