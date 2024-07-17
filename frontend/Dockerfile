@@ -3,12 +3,12 @@ FROM node:21 as build
 
 WORKDIR /app
 
-COPY ./frontent/package.json ./
-COPY ./frontent/package-lock.json ./
+COPY ./package.json ./
+COPY ./package-lock.json ./
 
 RUN npm install
 
-COPY ./frontent ./
+COPY . .
 
 RUN npm run build
 
