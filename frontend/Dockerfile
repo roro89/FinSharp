@@ -5,7 +5,8 @@ RUN ls -la
 COPY ./package.json ./app
 COPY ./package-lock.json ./app
 
-RUN ls -la
+WORKDIR /app
+
 RUN npm install
 
 COPY ./frontend .
