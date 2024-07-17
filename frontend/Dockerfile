@@ -10,6 +10,8 @@ RUN npm install
 
 COPY . .
 
+RUN ls -la
+
 RUN npm run build
 
 # Stage 2: Serve the React app with Nginx
