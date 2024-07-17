@@ -1,14 +1,14 @@
 # Stage 1: Build the React app
 FROM node:21 as build
 
-WORKDIR /app
+COPY ./package.json ./app
+COPY ./package-lock.json ./app
 
-COPY ./package.json ./
-COPY ./package-lock.json ./
+WORKDIR /app
 
 RUN npm install
 
-COPY . .
+COPY ./frontend .
 
 RUN ls -la
 
