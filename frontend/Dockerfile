@@ -1,25 +1,12 @@
-# Stage 1: Build the React app
-FROM node:21 as build
+FROM node:21-alpine
 
-RUN ls -la
-COPY ./package.json ./app
-COPY ./package-lock.json ./app
-
-WORKDIR /app
+WORKDIR /app/
+COPY public/ /app/public
+COPY src/ /app/src
+COPY package.json /app/
 
 RUN npm install
 
-COPY ./frontend .
-
-RUN ls -la
-
-RUN npm run build
-
-# Stage 2: Serve the React app with Nginx
-FROM nginx:alpine
-
-COPY --from=build /app/build /usr/share/nginx/html
-
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
