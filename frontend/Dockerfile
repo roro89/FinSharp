@@ -1,9 +1,9 @@
 FROM node:21-alpine
 
 WORKDIR /app/
-COPY public/ /app/public
-COPY src/ /app/src
-COPY package.json /app/
+COPY frontend/public/ /app/public
+COPY frontend/src/ /app/src
+COPY frontend/package.json /app/
 
 RUN npm install
 
