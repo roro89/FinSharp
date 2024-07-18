@@ -22,5 +22,6 @@ jobs:
         image: finshark/finsharp-app
         registry: gcr.io
         dockerfile: ./frontend/Dockerfile
+        directory: ./frontend
         username: _json_key
         password: ${{ secrets.GCP_SA_KEY }}
