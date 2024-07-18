@@ -1,12 +1,15 @@
 FROM node:21-alpine
 
-WORKDIR /app/
-COPY frontend/public/ /app/public
-COPY frontend/src/ /app/src
-COPY frontend/package.json /app/
+WORKDIR /app
 
+COPY package*.json ./
 RUN npm install
 
-EXPOSE 80
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3000
+ENV NODE_ENV=development
 
 CMD ["npm", "start"]
