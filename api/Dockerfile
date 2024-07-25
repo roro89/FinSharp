@@ -1,6 +1,11 @@
 # Stage 1: Build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./app
+RUN dotnet restore ./app/api.csproj
+
+# Copy everything else and build
 COPY . ./app
 WORKDIR /app
 RUN dotnet publish -c Release -o out
